@@ -1,4 +1,4 @@
-# Infrastructure for global load balancer
+# Infrastructure for load balancer
 
 1. VPC Network
 2. Subnets
@@ -8,7 +8,6 @@
 6. Managed Instance Groups
 7. Named Ports
 8. Static Global IP Address
-
 
 ## Step-1:
 
@@ -37,7 +36,7 @@ gcloud compute networks subnets create flipkart10-southeast1-subnet \
 ```
 
 ## Step-3
-Create Firewall Rules to Allow SSH -Port 22 HTTP-Port 80 and ICMP
+Create Firewall Rules to Allow SSH Port 22 HTTP Port 80 and ICMP
 ```bash
 gcloud compute firewall-rules create flipkart10-allow-lb \
     --network=flipkart10-lb-vpc \
@@ -88,7 +87,7 @@ gcloud compute health-checks create http flipkart10-lb-health-check \
 ```
 ## Step-7:
 
-### Instance Group in us-central1
+### Managed instance Group in us-central1
 ```bash
 gcloud compute instance-groups managed create flipkart10-lb-central-mig \
     --base-instance-name=flipkart10-lb-central \
